@@ -446,120 +446,147 @@
 
 // 
 
+// "use client"
+// import React from 'react';
+// import { motion } from 'framer-motion';
+
+// export default function LandingPage() {
+//   const text = "Send Anonymous Messages and Share Them!🤫".split("");
+
+//   return (
+//     <div className="bg-gray-50 text-gray-900 font-sans">
+//       {/* Navbar */}
+//       <nav className="bg-white shadow-md">
+//         <div className="max-w-7xl mx-auto px-4">
+//           <div className="flex justify-between items-center py-4">
+//             <div className="flex items-center">
+//               {/* Logo or Brand Name */}
+//               <a href="#" className="text-3xl font-extrabold text-blue-600 tracking-wide">
+//                 Whisperoo
+//               </a>
+//             </div>
+//             <div>
+//               {/* Navbar Links */}
+//               <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">Home</a>
+//               <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">Features</a>
+//               <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">About</a>
+//               <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">Contact</a>
+//             </div>
+//           </div>
+//         </div>
+//       </nav>
+
+//       {/* Hero Section */}
+//       <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-24 px-4">
+//         <div className="max-w-4xl mx-auto text-center">
+//           <h1 className="text-5xl md:text-7xl font-extrabold">
+//             {text.map((char, i) => (
+//               <motion.span
+//                 key={i}
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: 1 }}
+//                 transition={{
+//                   duration: 0.05,
+//                   delay: i * 0.05
+//                 }}
+//               >
+//                 {char}
+//               </motion.span>
+//             ))}
+//           </h1>
+//           <p className="mt-6 text-xl md:text-2xl">
+//             With AI-powered suggestions, send fun and mysterious messages to your friends.
+//           </p>
+//           <button className="mt-10 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
+//             Get Started
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* How It Works Section */}
+//       <div className="py-16 px-4">
+//         <div className="max-w-4xl mx-auto">
+//           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+//             How It Works
+//           </h2>
+//           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+//             <div className="text-center">
+//               <div className="w-16 h-16 bg-blue-600 text-white mx-auto rounded-full flex items-center justify-center text-2xl font-bold">
+//                 1
+//               </div>
+//               <p className="mt-6 text-lg">Create or receive an anonymous message.</p>
+//             </div>
+//             <div className="text-center">
+//               <div className="w-16 h-16 bg-purple-600 text-white mx-auto rounded-full flex items-center justify-center text-2xl font-bold">
+//                 2
+//               </div>
+//               <p className="mt-6 text-lg">Share it on social media like Instagram, Facebook, WhatsApp.</p>
+//             </div>
+//             <div className="text-center">
+//               <div className="w-16 h-16 bg-pink-600 text-white mx-auto rounded-full flex items-center justify-center text-2xl font-bold">
+//                 3
+//               </div>
+//               <p className="mt-6 text-lg">Get responses or continue the anonymous chat.</p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* AI-Powered Suggestions Section */}
+//       <div className="bg-blue-50 py-16 px-4">
+//         <div className="max-w-4xl mx-auto text-center">
+//           <h2 className="text-4xl md:text-5xl font-bold mb-4">
+//             AI-Powered Suggestions
+//           </h2>
+//           <p className="text-lg md:text-xl mb-8">
+//             Need inspiration? Our AI can suggest random messages to keep the conversation going!
+//           </p>
+//           <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors">
+//             Try it Now
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Footer Section */}
+//       <footer className="bg-gray-900 text-gray-400 py-10">
+//         <div className="max-w-4xl mx-auto text-center">
+//           <div className="mb-6">
+//             <a href="#" className="text-white hover:text-gray-300 mx-3">Home</a>
+//             <a href="#" className="text-white hover:text-gray-300 mx-3">About</a>
+//             <a href="#" className="text-white hover:text-gray-300 mx-3">Contact</a>
+//             <a href="#" className="text-white hover:text-gray-300 mx-3">Privacy Policy</a>
+//           </div>
+//           <p>&copy; 2024 Whisperoo. All rights reserved.</p>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// }
+
 "use client"
 import React from 'react';
-import { motion } from 'framer-motion';
 
-export default function LandingPage() {
-  const text = "Send Anonymous Messages and Share Them!🤫".split("");
-
+export default function ComingSoon() {
   return (
-    <div className="bg-gray-50 text-gray-900 font-sans">
-      {/* Navbar */}
-      <nav className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              {/* Logo or Brand Name */}
-              <a href="#" className="text-3xl font-extrabold text-blue-600 tracking-wide">
-                Whisperoo
-              </a>
-            </div>
-            <div>
-              {/* Navbar Links */}
-              <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">Home</a>
-              <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">Features</a>
-              <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">About</a>
-              <a href="#" className="text-gray-700 mx-4 hover:text-blue-600 transition-colors">Contact</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold">
-            {text.map((char, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.05,
-                  delay: i * 0.05
-                }}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </h1>
-          <p className="mt-6 text-xl md:text-2xl">
-            With AI-powered suggestions, send fun and mysterious messages to your friends.
-          </p>
-          <button className="mt-10 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
-            Get Started
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold">We're Coming Soon</h1>
+        <p className="mt-4 text-lg">Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.</p>
+        
+        <form className="mt-8">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="mt-2 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-black"
+          />
+          <button
+            type="submit"
+            className="ml-4 bg-white text-blue-700 font-semibold px-6 py-2 rounded-lg hover:bg-gray-200"
+          >
+            Notify Me
           </button>
-        </div>
+        </form>
       </div>
-
-      {/* How It Works Section */}
-      <div className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-            How It Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white mx-auto rounded-full flex items-center justify-center text-2xl font-bold">
-                1
-              </div>
-              <p className="mt-6 text-lg">Create or receive an anonymous message.</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 text-white mx-auto rounded-full flex items-center justify-center text-2xl font-bold">
-                2
-              </div>
-              <p className="mt-6 text-lg">Share it on social media like Instagram, Facebook, WhatsApp.</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-pink-600 text-white mx-auto rounded-full flex items-center justify-center text-2xl font-bold">
-                3
-              </div>
-              <p className="mt-6 text-lg">Get responses or continue the anonymous chat.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* AI-Powered Suggestions Section */}
-      <div className="bg-blue-50 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            AI-Powered Suggestions
-          </h2>
-          <p className="text-lg md:text-xl mb-8">
-            Need inspiration? Our AI can suggest random messages to keep the conversation going!
-          </p>
-          <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-colors">
-            Try it Now
-          </button>
-        </div>
-      </div>
-
-      {/* Footer Section */}
-      <footer className="bg-gray-900 text-gray-400 py-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6">
-            <a href="#" className="text-white hover:text-gray-300 mx-3">Home</a>
-            <a href="#" className="text-white hover:text-gray-300 mx-3">About</a>
-            <a href="#" className="text-white hover:text-gray-300 mx-3">Contact</a>
-            <a href="#" className="text-white hover:text-gray-300 mx-3">Privacy Policy</a>
-          </div>
-          <p>&copy; 2024 Whisperoo. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }
-
