@@ -495,7 +495,7 @@ export default function LandingPage() {
             ))}
           </h1>
           <p className="mt-6 text-xl md:text-2xl">
-            With AI-powered suggestions, create fun and mysterious messages to share on social media.
+            With AI-powered suggestions, send fun and mysterious messages to your friends.
           </p>
           <button className="mt-10 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
             Get Started
