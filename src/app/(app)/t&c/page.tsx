@@ -1,14 +1,13 @@
-// pages/terms.tsx
 import React from 'react';
 
 const TermsAndConditions: React.FC = () => {
   return (
     <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>Terms & Conditions</h1>
+      <h1>Terms &amp; Conditions</h1>
       <p><strong>Last Updated on: 06-09-2024</strong></p>
 
       <p>
-        Welcome to Whisperoo.in! These Terms and Conditions ("Terms") govern your use of our website ("Website") and the services provided ("Services"). By accessing or using our Website or Services, you agree to these Terms. Please read them carefully before proceeding.
+        Welcome to Whisperoo.in! These Terms and Conditions (&quot;Terms&quot;) govern your use of our website (&quot;Website&quot;) and the services provided (&quot;Services&quot;). By accessing or using our Website or Services, you agree to these Terms. Please read them carefully before proceeding.
       </p>
 
       <h2>1. Acceptance of Terms</h2>
