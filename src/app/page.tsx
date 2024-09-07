@@ -579,7 +579,7 @@ export default function ComingSoon() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="mt-2 px-4 py-2 w-full md:w-auto md:mr-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+            className="px-4 py-2 w-full md:w-auto md:mr-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
           />
           <button
             type="submit"
