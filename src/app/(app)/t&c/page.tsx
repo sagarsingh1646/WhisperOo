@@ -63,7 +63,7 @@ const TermsAndConditions: React.FC = () => {
 
       <h2>10. Disclaimers and Limitation of Liability</h2>
       <p>
-        We do not guarantee that the Services will be error-free, uninterrupted, or free of viruses or harmful components. Your use of the Website and Services is at your own risk. The Website and its Services are provided "as is" without any warranty of any kind, either express or implied. We are not liable for any indirect, incidental, special, or consequential damages arising from your use of the Website or Services.
+        {`We do not guarantee that the Services will be error-free, uninterrupted, or free of viruses or harmful components. Your use of the Website and Services is at your own risk. The Website and its Services are provided "as is" without any warranty of any kind, either express or implied. We are not liable for any indirect, incidental, special, or consequential damages arising from your use of the Website or Services.`}
       </p>
 
       <h2>11. Indemnification</h2>

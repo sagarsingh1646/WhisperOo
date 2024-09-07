@@ -570,9 +570,9 @@ export default function ComingSoon() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
       <div className="p-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold">We're Coming Soon</h1>
+        <h1 className="text-4xl md:text-6xl font-bold">{`We're Coming Soon`}</h1>
         <p className="mt-4 text-md md:text-lg">
-          Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.
+          {`Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.`}
         </p>
         
         <form className="mt-8 flex flex-col md:flex-row justify-center items-center">
