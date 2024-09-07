@@ -3,7 +3,7 @@ import UserModel from "@/model/User";
 import {z} from "zod";
 import { usernameValidation } from "@/schemas/signUpSchema";
 
-
+export const dynamic = 'auto';
 const UsernameQuerySchema = z.object({
     username: usernameValidation
 })
@@ -15,12 +15,13 @@ export async function GET(request: Request) {
 
     try{
         const {searchParams} = new URL(request.url)
+        console.log("params",searchParams)
         const queryParam = {
             username: searchParams.get('username')
         }
         //validate with zod
         const result = UsernameQuerySchema.safeParse(queryParam)
-        console.log(result) //TODO: remove
+        // console.log(result) //TODO: remove
         if(!result.success){
             const usernameErrors = result.error.format().username?._errors || []
             return Response.json({
@@ -45,7 +46,7 @@ export async function GET(request: Request) {
         },{status: 200})
 
     }catch(error) {
-        console.error("Error checking usernmae", error)
+        // console.error("Error checking usernmae", error)
         return Response.json(
             {
                 success: false,
