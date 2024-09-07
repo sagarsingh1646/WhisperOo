@@ -210,12 +210,12 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
 function Page() {
-  const [username, setUsername] = useState("");
-  const [usernameMessage, setUsernameMessage] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [usernameMessage, setUsernameMessage] = useState<string>("");
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const debounced = useDebounceCallback(setUsername, 500);
+  const debounced = useDebounceCallback(setUsername, 500); // Debouncing the input
   const { toast } = useToast();
   const router = useRouter();
 
@@ -228,30 +228,40 @@ function Page() {
     },
   });
 
+  // Check if username is unique, debounced to avoid rapid API calls
   useEffect(() => {
+    let isMounted = true;
+
     const checkUsernameUnique = async () => {
       if (username) {
         setIsCheckingUsername(true);
-        setUsernameMessage("");
+        setUsernameMessage(""); // Reset message before checking
         try {
-          const response = await axios.get(
-            `/api/check-username-unique?username=${username}`
-          );
-          setUsernameMessage(response.data.message);
+          const response = await axios.get(`/api/check-username-unique?username=${username}`);
+          if (isMounted) {
+            setUsernameMessage(response.data.message);
+          }
         } catch (error) {
           const axiosError = error as AxiosError<ApiResponse>;
-          setUsernameMessage(
-            axiosError.response?.data.message ??
-              "Error while checking username"
-          );
+          if (isMounted) {
+            setUsernameMessage(axiosError.response?.data.message ?? "Error while checking username");
+          }
         } finally {
-          setIsCheckingUsername(false);
+          if (isMounted) {
+            setIsCheckingUsername(false);
+          }
         }
       }
     };
+
     checkUsernameUnique();
+
+    return () => {
+      isMounted = false; // Cleanup to prevent memory leaks
+    };
   }, [username]);
 
+  // Form submission for signup
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     setIsSubmitting(true);
     try {
@@ -260,17 +270,17 @@ function Page() {
         title: "Success",
         description: response.data.message,
       });
-      router.replace(`/verify/${username}`);
-      setIsSubmitting(false);
+      router.replace(`/verify/${username || form.getValues("username")}`); // Fallback in case username is empty
     } catch (error) {
-      console.error("Error while signup", error);
+      console.error("Error during signup", error);
       const axiosError = error as AxiosError<ApiResponse>;
       let errorMessage = axiosError.response?.data.message;
       toast({
         title: "Signup failed!",
-        description: errorMessage,
+        description: errorMessage || "An error occurred",
         variant: "destructive",
       });
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -286,6 +296,7 @@ function Page() {
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            {/* Username Field */}
             <FormField
               control={form.control}
               name="username"
@@ -298,19 +309,15 @@ function Page() {
                       {...field}
                       onChange={(e) => {
                         field.onChange(e);
-                        debounced(e.target.value);
+                        debounced(e.target.value); // Call debounced function to check username uniqueness
                       }}
                       className="bg-gray-100 border-2 border-indigo-300 text-gray-900 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                     />
                   </FormControl>
-                  {isCheckingUsername && (
-                    <Loader2 className="animate-spin text-indigo-600 mt-2" />
-                  )}
+                  {isCheckingUsername && <Loader2 className="animate-spin text-indigo-600 mt-2" />}
                   <p
                     className={`text-sm mt-2 ${
-                      usernameMessage === "Username is unique"
-                        ? "text-green-500"
-                        : "text-red-500"
+                      usernameMessage === "Username is unique" ? "text-green-500" : "text-red-500"
                     }`}
                   >
                     {usernameMessage}
@@ -319,6 +326,7 @@ function Page() {
                 </FormItem>
               )}
             />
+            {/* Email Field */}
             <FormField
               control={form.control}
               name="email"
@@ -336,6 +344,7 @@ function Page() {
                 </FormItem>
               )}
             />
+            {/* Password Field */}
             <FormField
               control={form.control}
               name="password"
@@ -354,6 +363,7 @@ function Page() {
                 </FormItem>
               )}
             />
+            {/* Submit Button */}
             <div className="text-center">
               <Button
                 type="submit"
@@ -362,8 +372,7 @@ function Page() {
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please
-                    wait
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
                   </>
                 ) : (
                   "Signup"
@@ -372,6 +381,7 @@ function Page() {
             </div>
           </form>
         </Form>
+        {/* Link to sign-in page */}
         <div className="text-center mt-4">
           <p>
             Already a member?{" "}
@@ -386,6 +396,7 @@ function Page() {
 }
 
 export default Page;
+
 
 
 
