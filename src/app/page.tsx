@@ -112,7 +112,6 @@
 //   );
 // }
 
-
 // ******************************************
 
 // import React from 'react';
@@ -191,11 +190,7 @@
 //   );
 // }
 
-
 // ********************************
-
-
-
 
 // import React from 'react';
 
@@ -296,7 +291,7 @@
 
 // *****************
 
-// 
+//
 // "use client"
 // import React from 'react';
 // import { motion } from 'framer-motion';
@@ -444,7 +439,7 @@
 //   );
 // }
 
-// 
+//
 
 // "use client"
 // import React from 'react';
@@ -563,32 +558,47 @@
 //   );
 // }
 
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
+import Head from "next/head";
 
 export default function ComingSoon() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-      <div className="p-4 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold">{`We're Coming Soon`}</h1>
-        <p className="mt-4 text-md md:text-lg">
-          {`Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.`}
-        </p>
-        
-        <form className="mt-8 flex flex-col md:flex-row justify-center items-center">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-4 py-2 w-full md:w-auto md:mr-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
-          />
-          <button
-            type="submit"
-            className="w-full md:w-auto bg-white text-blue-700 font-semibold px-6 py-2 mt-4 md:mt-0 rounded-lg hover:bg-gray-200 transition-colors"
-          >
-            Notify Me
-          </button>
-        </form>
+    <>
+      <Head>
+        <title>Whisperoo</title>
+        <meta
+          name="description"
+          content="Whisperoo is an AI-powered anonymous messaging platform that lets you send and receive secret messages while preserving privacy. Share anonymously on social media and enjoy creative AI suggestions."
+        />
+        <meta
+          name="keywords"
+          content="anonymous messaging, AI messaging, secret messages, Whisperoo, social media integration, privacy, feedback"
+        />
+        <meta name="author" content="Whisperoo Team" />
+      </Head>
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div className="p-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold">{`We're Coming Soon`}</h1>
+          <p className="mt-4 text-md md:text-lg">
+            {`Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.`}
+          </p>
+
+          <form className="mt-8 flex flex-col md:flex-row justify-center items-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-4 py-2 w-full md:w-auto md:mr-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+            />
+            <button
+              type="submit"
+              className="w-full md:w-auto bg-white text-blue-700 font-semibold px-6 py-2 mt-4 md:mt-0 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              Notify Me
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
